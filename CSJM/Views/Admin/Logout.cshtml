@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logout</title>
+    <script>
+        function logout()
+        {
+            window.history.forward();
+            window.setTimeout("window.location.href='/Home/Adminlogin'", 1000);
+        }
+    </script>
+</head>
+<body onload="logout()">
+    <progress></progress>
+</body>
+</html>

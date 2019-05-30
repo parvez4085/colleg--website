@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "SportsGames";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12" style="margin-bottom:20px; border:1px solid #d8dede;">
+         <div class="row">
+        <div class=" col-lg-12 card" style="background-color:#af0202;color:#FFFFFF;padding:0;">
+           <center> <i class="fa fa-image" style="font-size:36px; color:#ffffff;"></i><font style="font-size:30px;">  <strong>Sports & Games</strong></font></center>
+           </div>
+       
+            <div class="col-lg-12 col-sm-12 col-md-12 Gallery">
+                   <a class="list-group-item list-group-item-action" href="../Home/CulturalProgrames">Cultural Programes</a>
+                    <a class="list-group-item list-group-item-action" href="../Home/NewsEvents" role="tab">Sports & Games</a>
+                    <a class="list-group-item list-group-item-action" href="../Home/SportsGames">News & Events </a>
+                    <a class="list-group-item list-group-item-action" href="../Home/CollageMedia">Collage in Media </a>
+                 <hr />
+                  </div>
+               </div>
+
+                   @using System.Data
+                   @using System.Data.Sql
+                   @using CSJM.Models
+                   @{
+                       ConnectionManager cm = new ConnectionManager();
+
+                       string comman2 = "select *from TBL_SportGame";
+                        System.Data.DataTable dt5 = cm.GetBulkRecord(comman2);
+                         if (dt5.Rows.Count > 0)
+                         {
+                             for (int i = 0; i < dt5.Rows.Count; i++)
+                             {
+                               var Title = dt5.Rows[i]["Title"].ToString();
+                                var Image = "../Content/Gallery/" + dt5.Rows[i]["Img"].ToString();
+                                 
+                                 <div class="col-lg-3 col-md-3  col-sm-3 col-xs-12 col-3" id="pic_show"> 
+                                     <div class="card1" style="min-height:300px; padding:0px;">
+                                         <a href="@Image" target="_blank" ><img src="@Image" class="img-fluid" height="100%" width="100%" /></a>
+                                         <div style="text-align:center;font-size:18px; font-family:'Times New Roman';"><br />
+                                             <strong>@Title</strong><br />
+                                              </div>
+                                         </div>
+                                     </div>
+                             }
+                         }
+                             
+               
+                   }
+            
+        </div>
+    </div>

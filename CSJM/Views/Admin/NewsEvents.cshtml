@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "NewsEvents";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-3 col-md-3  col-sm-4 col-xs-12 col-3"></div>
+    <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 col-6 card1" style="padding:0 50px 0 50px;">
+        <a href="../Admin/Gellary2"> <--    Back  --></a>
+         <center> <i class="fa fa-graduation-cap" style="font-size:36px; color:#ffffff;"></i><font style="font-size:30px;">  
+             <strong>News And Events Management</strong></font></center>
+        <br />
+        <form action="../Admin/NewsEvents" method="post" enctype="multipart/form-data">
+            <label>News Events Title :</label>
+            <input type="text" name="txtTitle" class="form-control" placeholder="Types here..." /><br />
+            <label>Upload Image</label>
+            <input type="file" name="txtfile" class="form-control" /><br />
+            
+            
+            <label>@ViewBag.result</label>
+            <input type="submit" value="Save Image" class="btn btn-success form-control" />
+          
+            <br /><br />
+
+        </form>
+
+
+    </div>
+    <div class="col-lg-3 col-md-3  col-sm-4 col-xs-12 col-3"></div>
+    
+</div>

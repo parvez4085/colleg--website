@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "DeleteCourses";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using CSJM.Models;
+<div class="row">
+    <div class="col-lg-2 col-md-2  col-sm-3 col-xs-12 col-2"></div>
+    <div class="col-lg-8 col-md-8  col-sm-6 col-xs-12 col-8 card1">
+        @Html.ActionLink("Add Courses", "../Admin/OurCoureseMngt", "OurCoureseMngt")
+            
+            <table class="table">
+                <tr>
+                    <th>Courses Id</th>
+                    <th>Courses Name</th>
+                    <th>Courses Images</th>
+                    <th>Intake</th>
+                    <th>Duration</th>
+                    <th> Insert Data</th>
+                    <th>Delete</th>
+                    </tr>
+                @{
+                    ConnectionManager cm = new ConnectionManager();
+                    string cmd = "select *from TBL_OurCourses";
+                    System.Data.DataTable dt = cm.GetBulkRecord(cmd);
+                    if (dt.Rows.Count > 0)
+                    {
+                        int j=1;
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                           
+                            <tr>
+                                <td>@j</td>
+                                <td>@dt.Rows[i]["CourseName"].ToString()</td>
+                                <td>@dt.Rows[i]["Img"].ToString()</td>
+                                <td>@dt.Rows[i]["Intake"].ToString()</td>
+                                <td>@dt.Rows[i]["Duration"].ToString()</td>
+                                <td>@dt.Rows[i]["dt"].ToString()</td>
+                               <td><a href="/Admin/Delete?dt2=@dt.Rows[i]["Id"].ToString() " onclick="return confirm('Are you sure')">Click</a></td>
+                           </tr>
+                            j++;
+                            
+                    }
+                }
+                }
+                
+            </table>
+        <h5>@ViewBag.result</h5>
+        <div class="col-lg-2 col-md-2  col-sm-3 col-xs-12 col-2"></div>
+    </div>
+    </div>
+

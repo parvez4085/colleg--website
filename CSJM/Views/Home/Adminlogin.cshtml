@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Adminlogin";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+    <style>
+        input:required
+{
+color:green;
+font-family:Verdana;
+font-size:18px;
+font-weight:bold;
+padding-left:10px;
+border-radius:5px;
+}
+        .xxxx {
+        font-size:19px;
+        font-weight:bold;
+        font-family:Verdana;
+        }
+    .vcd a:link {
+    cursor:none;
+    }
+    </style>
+ 
+<div class="row">
+        <div class="col-sm-12">
+            <div class="vcd" style="min-height:100px;background-color:#1627f3;padding:0px;">
+            <div class="col-sm-6">
+          <div style="font-family:Algerian;padding-top:16px;color:white;text-align:center;font-size:39px;">PLEASE&nbsp; LOGIN</div> 
+        </div>
+             <div class="col-sm-6">
+         <div style="font-family:Algerian;padding-top:16px;color:white;text-align:center;font-size:39px;"><a href="/Home/Registration" class="disabled" style="color:white;text-align:center;pointer-events:none;"></a></div>
+             </div>
+            </div>
+        </div>
+      </div>
+        
+
+         <div class="row">
+            <div class="col-sm-12">
+                <div class="cse" style="background:#efc161;min-height:400px;"><br />
+                    <div class="col-sm-12">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10" style="min-height:300px;"><br /><div class="form-group">
+     <form action="/Home/Adminlogin" method="post" >
+         <div class="row">
+             <div class="col-sm-12">
+                 <div class="col-sm-4 xxxx">
+             Administration ID : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-7">
+            <input type="email" autocomplete="off" class="form-control"  maxlength="30" placeholder="Enter Administration ID" required="required"  name="txtuserid"/><br /><br /></div>
+            <div class="col-sm-4 xxxx">
+                 Password : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-7">
+            <input type="password" class="form-control" autocomplete="off" maxlength="20" placeholder="Enter Your Password" required="required" name="txtpass" /><br /><br /></div>
+            <div class="col-sm-4 xxxx"></div><div class="col-sm-3 xxxx">
+              <input type="submit" value="Login" style="background:#2488bb;" class="btn btn-success form-control"/><br /><br /></div>
+             <div class="col-sm-3 xxxx">
+              <input type="reset" value="Reset" style="background:#2488bb;" class="btn btn-success form-control"/><br /><br /></div>
+             </div>
+             </div>
+         </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>

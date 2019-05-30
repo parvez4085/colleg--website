@@ -1,0 +1,552 @@
+﻿@{
+    Layout = null;
+}
+        @using System.Data;
+        @using System.Data.SqlClient;
+        @using CSJM.Models;       
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>Index</title>
+     <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/hover-min.css" rel="stylesheet" />
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <link href="~/Content/Main.Css" rel="stylesheet" />
+
+    <script>$("document").ready(function ($) {
+    var nav = $('#main-menu-container');
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            nav.addClass("f-nav");
+        }
+        else if ($(this).scrollTop() > 300) {
+            nav.addClass("f-nav");
+        }
+
+
+        else {
+            nav.removeClass("f-nav");
+        }
+
+    });
+});
+        var timeOutValue = 100;      // SET TIMEOUT (IN MILISECONDS).
+        var setTimeToHide_ID, mItem;
+
+        function showmenu(obj) {
+            if (mItem) mItem.style.display = 'none';
+
+            mItem = document.getElementById(obj);
+            mItem.style.display = 'block';
+            mItem.style.color = 'red';
+        }
+        // SET TIME TO HIDE MENU LIST.
+        function setTimeToHide() {
+            setTimeToHide_ID = window.setTimeout(HideMenu, timeOutValue);
+        }
+
+        function HideMenu() {
+            if (mItem) mItem.style.display = 'none';
+        }       // HIDE THE MENU LIST AFTER A SPECIFIED TIME.
+
+        function ReSetTimer() {
+            if (setTimeToHide_ID) {
+                window.clearTimeout(setTimeToHide_ID);
+                setTimeToHide_ID = 0;
+            }
+        };
+
+    </script>
+    <style>
+            .btn {
+            border:1px solid;
+            background-color:whitesmoke;
+            color:none;
+            box-shadow:4px;
+            font-size:16px;
+        }
+            .btn a:hover {
+                color:white;
+                background-color:none;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid"> 
+        <!----------------------- Footer Code here Strat--------------->
+
+         <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 col-12">
+                <div class="col-sm-12" style="min-height: 100px; max-height:400px; color: white; background: #424a53;">
+                    <div class="row">
+                    <div class="col-lg-1 col-xs-3" style="padding:0"><img src="~/Content/Imagess/ima1.png" style="height:100px;width:100px;" /></div>
+                    <div class="col-sm-10 col-xs-6" style="text-align:center; padding-top:10px;">
+                    <div style="font-family:Verdana; font-size:22px;">
+                    Government Polytechnic Aurai,Bhadohi, Uttar Pradesh</div>
+                    <div style="font-family:'Kruti Dev 010';font-size:20px;font-weight:bold;">
+                    jktdh; ikWyhVsfDud vkSjkbZ] Hknksgh] mRrj izns”k 
+                    </div>
+                </div>
+                    <div class="col-lg-1 col-xs-3" style="float:right;padding:0"><img src="~/Content/Imagess/ima2.png" style="max-height:100px;" /></div>
+                  
+                </div>
+                    </div>
+        </div>
+        </div>
+
+        <!----------------------- Footer Code here End---------------> 
+      
+         <!--  <div class="row">
+            
+           <div class="col-lg-12" style="min-height:100px; background-color:#f2f2f2;">
+                <div class="row">
+                <div class="col-lg-1 col-xs-2"><img src="~/Content/Imagess/ima1.png" style="height:100px;width:100px;" /></div>
+                <div class="col-sm-10 col-xs-8" style="text-align:center; padding-top:10px;">
+                    <div style="font-family:Verdana; font-size:24px;">
+                    Government Polytechnic Aurai,Bhadohi, Uttar Pradesh</div>
+                    <div style="font-family:'Kruti Dev 010';font-size:32px;font-weight:bold;">
+                    jktdh; ikWyhVsfDud vkSjkbZ] Hknksgh] mRrj izns”k 
+                    </div>
+                </div>
+                <div class="col-lg-1 col-xs-2" style="float:right;"><img src="~/Content/Imagess/ima2.png" style="max-height:100px;" /></div>
+            </div>
+         </div>
+        </div>
+             </div>
+
+
+
+        <!------------------- Menu Bar code Strat here----------------------->
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                    <nav class="navbar navbar-inverse" style="background:#f70f0f;">
+                        <div id="main-menu-container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <a class="navbar-brand" href="../Home/Index" style="color:#FFFFFF;"><i class="fa fa-institution"></i> </a>
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav" style="color:whitesmoke;">
+                                    <li><a href="/Home/Index" style="color:whitesmoke;font-size:16px;"> home<span class="sr-only">(current)</span></a></li>
+                                        <li class="dropdown">
+                                         <a href="#" class="dropdown lia" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat');" onmouseout="setTimeToHide()" style="color:whitesmoke;font-size:16px;">About Us<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/AboutIns">About Institute</a></li>
+                                              <li><a href="../Home/MissionVission">Mission & Vision</a></li>
+			                                  <li><a href="../Home/PrincipaleMessage">Principal's Message</a></li>
+			                                  <li><a href="#">Rules and Regulations</a></li>
+			                                  <li><a href="#">Infrastructure</a></li>
+                                          </ul>
+                                   </li>
+                                     <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat1');" onmouseout="setTimeToHide()" style="color:whitesmoke;font-size:16px;">Governance<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat1" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/Principal">Principal</a></li>
+                                              <li><a href="../Home/AcademicCommittee">Academic Committee</a></li>
+			                                  <li><a href="../Home/FinanceCommittee">Finance Committee</a></li>
+			                                  <li><a href="../Home/AciteCommittee">AICTE Committee</a></li>
+			                                  <li><a href="../Home/ScholarshipCommittee">Scholarship Committee</a></li>
+                                              <li><a href="#">Sports Committee</a></li>
+                                              <li><a href="games.php">Proctorial Committee</a></li>
+                                              <li><a href="games.php">Securites & Gardening Committee</a></li>
+                                              <li><a href="games.php">Training & Placement Committee</a></li>
+                                          </ul>
+                                   </li>
+                                     <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat2');" onmouseout="setTimeToHide()" style="color:whitesmoke;font-size:16px;">Academics<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat2" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/AcademicProgram">Academic Programmes</a></li>
+                                              <li><a href="../Home/Syllabus">Syllabus</a></li>
+			                                  <li><a href="../Home/Admission">Admissions</a></li>
+			                                  <li><a href="../Home/FeesStructure">Fees Structure</a></li>
+			                                  
+                                          </ul>
+                                   </li>
+                                     <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat3');" onmouseout="setTimeToHide()" style="color:whitesmoke;font-size:16px;">Departments<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat3" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/Computer">Computer Science & Engineering</a></li>
+                                              <li><a href="../Home/Information">Information of Technology</a></li>
+			                                  <li><a href="../Home/Electronics">Electronics Enginnering</a></li>
+                                              <li><a href="../Home/Applied">Applied Science</a></li>
+			                                  </ul>
+                                   </li>
+                                     <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat4');" onmouseout="setTimeToHide()" style="color:whitesmoke;font-size:16px;">Training & Placement<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat4" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="convocation.php">Training Statistics</a></li>
+                                              <li><a href="teacher.php">Placement Statistics</a></li>
+			                                  <li><a href="annual.php">Placed Students Details</a></li>
+                                              <li><a href="annual.php">Recruiting Partners</a></li>
+			                                  </ul>
+                                   </li>
+                                    <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat5');" onmouseout="setTimeToHide()" style="color:whitesmoke;font-size:16px;">facilities & resources<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat5" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/Facilities">Hostels</a></li>
+                                              <li><a href="../Home/CentralLibrary">Central Library</a></li>
+			                                  <li><a href="annual.php">Sport & Atheletics</a></li>
+                                              <li><a href="../Home/AuditoriumAndSeminarHalls">Auditorium & Seminar Halls</a></li>
+			                                  </ul>
+                                   </li>
+                                    <li ><a href="../Home/Alumini" style="color:whitesmoke;font-size:16px;">Alumni</a></li>
+                                    <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat6');" onmouseout="setTimeToHide()" style="color:whitesmoke;font-size:16px;">contact us<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat6" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/Adminlogin">Address</a></li>
+                                              <li><a href="teacher.php">Maps & Location</a></li>
+			                                  <li><a href="annual.php">Phone Directory</a></li>
+                                              <li><a href="annual.php">Feedback/Query</a></li>
+			                                  </ul>
+                                   </li>
+                                    </ul>
+                       
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </div>
+                </div>
+
+       <!------------------- Menu Bar code End here----------------------->
+
+        
+       <!------------------- Slider  code Strat here----------------------->
+        <div class="row">
+                <div class="col-sm-12" style="min-height:600px;">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                             <ol class="carousel-indicators">
+                                 @{
+                                     ConnectionManager cm = new ConnectionManager();
+                                     String query = "Select count(*) from TBL_SliderImage";
+                                     System.Data.DataTable dt = cm.GetBulkRecord(query);
+                                     int count = 0, j = 0;
+
+                                     if (dt.Rows.Count > 0)
+                                     {
+
+                                         count = int.Parse(dt.Rows[0][0].ToString());
+
+                                     }
+                                     while (count != 0)
+                                     {
+                                         j++;
+                                         var active = j == 1 ? "active" : "";
+                                         <li data-target="#myCarousel" data-slide-to="@j" class="@active"></li>
+                                         count--;
+
+                                     }
+                                     
+                                     
+                                 }
+                             </ol>
+                            <div class="carousel-inner">
+                               
+                                @{
+                                    
+
+                                    string cmd = "select ImagePath from TBL_SliderImage";
+                                    System.Data.DataTable dt1 = cm.GetBulkRecord(cmd);
+                                    if (dt1.Rows.Count > 0)
+                                    {
+                                        int d = 0;
+                                        for (int i = 0; i < dt1.Rows.Count; i++)
+                                        {
+                                            d++;
+                                            var data = "../Content/SliderImages/" + dt1.Rows[i]["ImagePath"].ToString();
+
+                                            var active = d == 1 ? "active" : "";
+                                            <div class="item @active">
+
+                                                <img src="@data" alt="Los Angeles" style="height:600px; width:100%;border-radius:1%;">
+                                    
+                                           </div>
+                                        }
+                                    }
+                                }                                
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                </div>
+        </div>
+
+
+
+           <!------------------- Slider  code End here----------------------->
+
+           <!------------------- News Feeds Strat----------------------->
+   <div class="container-fluid" style="background-color:#FFFFFF; margin-top:50px" >
+        <div class="row">
+            <div class="col-lg-4 col-md-12  col-sm-12 col-xs-12 col-12">  
+                <div class="card"  style="min-height:388px;max-height:388px;" >
+                     <h5 class="card_header" style="color:#af0202"><strong><center> <i class="fa fa-bullhorn" style="font-size:36px;color:red"></i> NOTICE BOARD</center></strong></h5>
+                    <div class="card_body" style="overflow:hidden;">
+                         <!-- <marquee  onMouseOver="this.scrollAmount=0" onMouseOut="this.scrollAmount=2" scrollamount="2" direction="up" loop="true" width="100%">-->
+                        <marquee  behavior="scroll" direction="up" onmouseover="this.stop();" onmouseout="this.start();"  scrollamount="2">
+                            @{
+                                string cmd1 = "select *from TBL_NoticBoard";
+                                System.Data.DataTable dt2 = cm.GetBulkRecord(cmd1);
+                                if(dt2.Rows.Count>0)
+                                {
+                                    for(int i=0;i<dt2.Rows.Count;i++)
+                                    {
+                                       var Text= dt2.Rows[i]["Text"].ToString();
+                                       var files = "../Content/FdfFiles/" + dt2.Rows[i]["Img"].ToString();
+                                        <p style="text-align:center;"><img src="~/Content/Imagess/new_animated.gif" height="20px" width="70px" />
+
+                                            @Text<br />
+                                        <a href="@files" class="btn btn-success" target="_blank">View More</a>
+                                     </p> 
+                                    }
+                                }
+                                }
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-lg-4 col-md-12  col-sm-12 col-xs-12 col-12">
+                <div class="card" style="min-height:388px;">
+                     <h5 class="card_header" style="color:#af0202;"><strong><center>WELCOME TO GOVERNMENT POLYTECHNIC AURAI, BHADOHI</center></strong></h5>
+                    <div class="card_body">
+                        <p>Government Polytechnic Aurai Bhadohi is the first Government diploma college located in the district of Bhadohi, Uttar Pradesh, India. It has been established in 2013. This institute is affiliated to Board of Technical Education, Uttar Pradesh.</p>
+                        <p> G.P Aurai Bhadohi offers a diploma in three branches: Computer Science and Engineering, Electronics Engineering & Information Technology. <br>All courses are approved by AICTE, New Delhi.. </p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-lg-4 col-md-12  col-sm-12 col-xs-12 col-12">
+                <div class="card"  style="min-height:388px;max-height:388px;" >
+                    <h5 class="card_header" style="color:#af0202;"><strong><center> <i class="fa fa-calendar" style="font-size:36px;color:red"></i></i> NEWS & EVENTS</center></strong></h5>
+                    <div class="card_body" style="overflow:hidden;" >
+                         <marquee  behavior="scroll" direction="up" onmouseover="this.stop();" onmouseout="this.start();"  scrollamount="2">
+
+                             @{
+                                 string cmd2 = "select *from TBL_NewsEvents";
+                                System.Data.DataTable dt3 = cm.GetBulkRecord(cmd2);
+                                if(dt3.Rows.Count>0)
+                                {
+                                    for(int i=0;i<dt3.Rows.Count;i++)
+                                    {
+                                        var Text1=dt3.Rows[i]["Text"].ToString();
+                                        var files1="../Content/FdfFiles/"+dt3.Rows[i]["Img"].ToString();
+                                        <p style="text-align:center;"><img src="~/Content/Imagess/new_animated.gif" height="30px" width="70px" />
+
+                                            @Text1<br />
+                                        <a href="@files1" class="btn btn-success" target="_blank">View More</a>
+                                     </p> 
+                                    }
+                                }
+                                }
+                            
+                            </marquee>
+                        
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+       </div>
+
+
+        <!----------------------- News Feeds End---------------------->
+
+
+        <!----------------------- Our Courses Code here--------------->
+        <div class="container-fluid" style="background-color:#FFFFFF; margin:50px 0 50px 0;">
+           <center><font style="font-size:30px;">  <strong>OUR COURSES</strong></font></center>
+
+        <div class="row">
+            @{
+                string command = "select *from TBL_OurCourses";
+                System.Data.DataTable dt4 = cm.GetBulkRecord(command);
+                if (dt4.Rows.Count > 0)
+                {
+                    for (int i3 = 0; i3 < dt4.Rows.Count; i3++)
+                    {
+                        string courseName = dt4.Rows[i3]["CourseName"].ToString();
+                        string Img = "../Content/Photoes/" + dt4.Rows[i3]["Img"].ToString();
+                        string Intake = dt4.Rows[i3]["Intake"].ToString();
+                        string Duration = dt4.Rows[i3]["Duration"].ToString();
+                        
+                        <div class="col-lg-4 col-md-12  col-sm-12 col-xs-12 col-12" id="pic_show">
+                            <div class="card1" style="min-height:300px; padding:0px;">
+                                <a href="@Img " ><img src="@Img" class="img-fluid" height="100%" width="100%" /></a>
+                          <div style="text-align:center;font-size:22px; font-family:'Times New Roman';">
+                                 <strong>@courseName</strong>
+                              </div><br />
+                             <div style="float:left;padding:10px; font-weight:bold">Intake- @Intake </div>
+                             <div style="float:right;padding:10px;font-weight:bold"> Duration - @Duration</div>
+                            </div>
+                            </div>
+                    }
+                }
+                
+                
+            }
+           
+            </div>
+            </div>              
+        <!----------------------- Our Courses Code here End--------------->
+
+
+        <!----------------------- Our Gallary Code here--------------->
+        <div class="container-fluid" style="background-color:#FFFFFF; margin:50px 0 50px 0">
+           <center><font style="font-size:30px;">  <strong>OUR GELLARY</strong></font></center>
+            
+
+        <div class="row">
+            @{
+                
+                string Image = "", Title = "";
+                string comman2 = "select *from TBL_CulturalProgrames";
+                System.Data.DataTable dt5 = cm.GetBulkRecord(comman2);
+                if (dt5.Rows.Count > 0)
+                {
+                    for(int i=0;i<dt5.Rows.Count;i++)
+                    {
+                         Title = dt5.Rows[i]["Title"].ToString();
+                         Image ="../Content/Gallery/"+ dt5.Rows[i]["Img"].ToString();
+                    }
+                }    
+                <div class="col-lg-3 col-md-3  col-sm-3 col-xs-12 col-3" id="pic_show"> 
+                    <div class="card1" style="min-height:300px; padding:0px;">
+                        <a href="@Image" target="_blank" ><img src="@Image" class="img-fluid" height="100%" width="100%" /></a>
+                        <div style="text-align:center;font-size:18px; font-family:'Times New Roman';"><br />
+                            <strong>@Title</strong><br />
+                            <a href="../Home/CulturalProgrames" class="btn btn-success">View more</a>
+                            </div>
+                        
+                        </div>
+                </div>
+                
+                string Image1 = "",Title1="";
+                string comman3 = "select *from TBL_SportGame";
+                System.Data.DataTable dt6 = cm.GetBulkRecord(comman3);
+                if (dt6.Rows.Count > 0)
+                {
+                    for(int i=0;i<dt6.Rows.Count;i++)
+                    {
+                         Title1 = dt6.Rows[i]["Title"].ToString();
+                         Image1 ="../Content/Gallery/"+ dt6.Rows[i]["Img"].ToString();
+                    }
+                }    
+                <div class="col-lg-3 col-md-3  col-sm-3 col-xs-12 col-3" id="pic_show"> 
+                    <div class="card1" style="min-height:300px; padding:0px;">
+                        <a href="@Image1" target="_blank" ><img src="@Image1" class="img-fluid" height="100%" width="100%" /></a>
+                        <div style="text-align:center;font-size:18px; font-family:'Times New Roman';"><br />
+                            <strong>@Title1</strong><br />
+                            <a href="../Home/SportsGames" class="btn btn-success">View more</a>
+
+                            </div>
+                        </div>
+                </div>
+                
+                string Image2 = "",Title2="";
+                string comman4 = "select *from TBL_NewsEvent";
+                System.Data.DataTable dt7 = cm.GetBulkRecord(comman4);
+                if (dt7.Rows.Count > 0)
+                {
+                    for(int i=0;i<dt7.Rows.Count;i++)
+                    {
+                         Title2 = dt7.Rows[i]["Title"].ToString();
+                         Image2 ="../Content/Gallery/"+ dt7.Rows[i]["Img"].ToString();
+                    }
+                }    
+                <div class="col-lg-3 col-md-3  col-sm-3 col-xs-12 col-3" id="pic_show"> 
+                    <div class="card1" style="min-height:300px; padding:0px;">
+                        <a href="@Image2" target="_blank" ><img src="@Image2" class="img-fluid" height="100%" width="100%" /></a>
+                        <div style="text-align:center;font-size:18px; font-family:'Times New Roman';"><br />
+                            <strong>@Title2</strong><br />
+                            <a href="../Home/NewsEvents" class="btn btn-success">View more</a>
+
+                            </div>
+                        </div>
+                </div>
+                string Image3 = "",Title3="";
+                string comman5 = "select *from TBL_CollageMedia";
+                System.Data.DataTable dt8 = cm.GetBulkRecord(comman5);
+                if (dt8.Rows.Count > 0)
+                {
+                    for(int i=0;i<dt8.Rows.Count;i++)
+                    {
+                         Title3 = dt8.Rows[i]["Title"].ToString();
+                         Image3 ="../Content/Gallery/"+ dt8.Rows[i]["Img"].ToString();
+                    }
+                }    
+                <div class="col-lg-3 col-md-3  col-sm-3 col-xs-12 col-3" id="pic_show"> 
+                    <div class="card1" style="min-height:300px; padding:0px;">
+                        <a href="@Image3" target="_blank" ><img src="@Image3" class="img-fluid" height="100%" width="100%" /></a>
+                        <div style="text-align:center;font-size:18px; font-family:'Times New Roman';"><br />
+                            <strong>@Title3</strong><br />
+                           <a href="../Home/CollageMedia" class="btn btn-success"> View more</a>
+
+                            </div>
+                        </div>
+                </div>
+            }
+            
+          </div>
+            </div>              
+        <!----------------------- Our Courses Code here End--------------->
+
+        <!----------------------- Footer Code here Strat--------------->
+
+         <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 col-12">
+                <div class="col-sm-12" style="min-height: 100px; max-height:400px; color: white; background: #424a53;"><br />
+                    <div class="col-sm-4">
+                         Goverment Polytechnic Sant Ravidash Nagar (Bhadohi),<br />Uttar Pradesh, India.
+                    </div>
+                    <div class="col-sm-4" style="padding-left:14px;">
+                        <a href="http://www.facebook.com" target="_blank" style="text-decoration:none;font-size:22px;color:white"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" style="text-decoration:none;font-size:22px;padding:5px;color:white"><i class="fa fa-twitter"></i></a>
+                        <a href="http://plus.google.com" target="_blank" style="text-decoration:none;font-size:22px;color:white"><i class="fa fa-google-plus"></i></a>
+                        <a href="http://www.instagram.com" target="_blank" style="text-decoration:none;font-size:22px;padding:5px;color:white"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    <div class="col-sm-4">
+                        <a href="http://www.google.com" target="_blank" style="color:white;">
+                            Mobile apps - seaching on the go<br />
+                            other college - for complete knowledge
+                        </a>
+                    </div><br /><br /><br />
+                    <hr />
+                <div class="po" style="text-align:center;">
+                    <h5> GOVERNMENT POLYTECHNIC AURAI, SANT RAVIDAS NAGAR (BHADOHI), UTTAR PRADESH</h5>
+                         Copyright &copy; 2019-2020 GPAurai | All rights reserved.
+                </div>
+                </div>
+        </div>
+        </div>
+
+        <!----------------------- Footer Code here End--------------->
+
+    </div>
+</body>
+</html>

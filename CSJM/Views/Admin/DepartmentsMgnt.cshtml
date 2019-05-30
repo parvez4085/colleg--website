@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "DepartmentsMgnt";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+@model CSJM.Models.DepartmentsTeacherData
+  <style>
+        span {
+            color:red;
+        }
+    </style>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#imgProfie").click(function () {
+            $("#txtfile").trigger('click');
+        })
+        function readURL(input, target) {
+            if (input.files && input.files[0])
+            {
+                var reader = new FileReader();
+                var image_target = $(target);
+                reader.onload = function (e) {
+                    image_target.attr('src', e.target.result).show();
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#txtfile").live("change", function () {
+            readURL(this, "#imgProfie");
+        })
+    })
+</script>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 card1" style="margin-top:20px; background-color:#f2f2f2;" onload="ChangeValue()">
+        <form action="../Admin/DepartmentsMgnt" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-sm-8">
+                    <table class="table">   
+                     <tr>
+
+                         <td colspan="3"><input type="submit" name="cbutton" value="AddNew" @ViewBag.addnewbutton class="btn btn-success" />&nbsp&nbsp
+                            <input type="submit" name="cbutton" value="Save" @ViewBag.savebutton class="btn btn-success"/>&nbsp&nbsp
+                            <input type="submit" name="cbutton" value="Update" @ViewBag.updatebutton  class="btn btn-info"/>&nbsp&nbsp
+                            <input type="submit" name="cbutton" value="Delete" @ViewBag.Deletebutton  class="btn btn-success"/>&nbsp&nbsp
+                            <input type="submit" name="cbutton" value="Cancel" @ViewBag.cancelbutton  class="btn btn-danger"/>
+                           <br /><br />
+                          <span style="color:red">@ViewBag.updateresult</span></td>
+                     </tr>
+                     <tr>
+                         <td>Roll No</td>
+                         <td><input type="text" name="txtId" value="@Model.dbId"/>&nbsp&nbsp&nbsp<input type="submit" name="cbutton" value="Search" @ViewBag.searchbutton  class="btn btn-primary"/><br />
+                        <font color="RED">@ViewBag.searchresult</font></td>
+                     </tr>
+                      <tr>
+                        <td>1.Name of Department</td>
+                      </tr>
+                       <tr><td>Fast Name <span>*</span></td>
+                            <td><input type="text" name="txtName" value="@Model.dbName" class="form-control" /></td>
+                       </tr>
+                        <tr>
+               
+                            <td>Last Name<span>*</span></td>
+                           <td><input type="text" name="txtLastName" value="@Model.dbLastName" class="form-control"/></td>
+                        </tr>
+                
+                    </table>
+                </div>
+                
+                <div id="imgDiv" class="col-sm-3" style="height:250px; background-color:white; border:1px solid; margin-top:20px; margin-left:50px; padding:0px;">
+                 <img src="@Model.dbPic" id="imgProfie"  height="100%" width="100%"/>
+                    <input type="file" name="txtfile" id="txtfile" style="display:none;" />
+                </div>
+                
+            </div>
+         <table class="table">
+              <tr>
+                    <td>2.Post<span>*</span></td>
+                    <td><input type="text" name="txtPost" value="@Model.dbPost"  class="form-control"/></td>
+                
+                    
+                    <td>3.OtherPost<span>*</span></td>
+                    <td><select name="txtOtherPost" class="form-control">
+                        <option value="@Model.dbOtherPost" id="OtherPost" ><--  Select Opction  --></option>
+                        <option>Academic Committee</option>
+                        <option>Finance Committee</option>
+                        <option>AICTE Committee</option>
+                        <option>Scholarship Committee</option>
+                        <option>Spost Committee</option>
+                        <option>Proctorial Committee</option>
+                        <option>Security & Gardening Committee</option>
+                        <option>Training & Placement Committee</option>
+                        </select></td>
+                </tr>
+                     <tr>
+                    <td>4.Department<span>*</span></td>
+                    <td><select name="txtDepartment" class="form-control">
+                        <option value="@Model.dbDepartment"><---  Select Option  ---></option>
+                        <option>Computer Science & Engg.</option>
+                        <option>Electronics Engg.</option>
+                        <option>Information Of Technology</option>
+                        <option>Applied Science</option>
+                        </select></td>
+                
+                    
+                    <td>5.Mobile No.<span>*</span></td>
+                    <td><input type="text" name="txtMobNo" value="@Model.dbMobno"  class="form-control"/></td>
+                </tr>
+              <tr>
+                    <td>6.Email Id<span>*</span></td>
+                    <td><input type="email" name="txtEmailId" value="@Model.dbEmailId"  class="form-control"/></td>
+                
+                    
+                    <td>7.Qualification<span>*</span></td>
+                    <td><input type="text" name="txtQualification" value="@Model.dbQualification"  class="form-control"/></td>
+                </tr>
+              <tr>
+                    <td>8.Teaching/Working Experience <span>*</span></td>
+                    <td><input type="text" name="txtTeacherWorkingEx" value="@Model.dbTeachingWorkingEx"  class="form-control"/></td>
+                </tr>
+             </table>
+
+        </form>
+            
+            </div>
+        
+        <div class="col-sm-2"></div>
+    </div>

@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Facilities";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 Left">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" href="../Home/Facilities">Hostels</a>
+      <a class="list-group-item list-group-item-action" href="../Home/CentralLibrary">Central Library</a>
+        <a class="list-group-item list-group-item-action" href="../Home/SportsAtheletics">Sports & Atheletics </a>
+      <a class="list-group-item list-group-item-action" href="../Home/AuditoriumAndSeminarHalls">Auditorium & Seminar Halls </a>
+      
+    
+    </div>
+  </div>
+   <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+       <div class="row">
+           <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" style="border:1px solid #d8dede;margin-bottom:20px; padding:0px">
+        <div class="card" style="background-color:#af0202;color:#FFFFFF;">
+           <center> <i class="fa fa-bed" style="font-size:36px; color:#ffffff;"></i><font style="font-size:30px;">  <strong>Hostels</strong></font></center>
+           </div>
+               <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" style="margin-top:10px">
+               <div style="font-size:19px; float:left">
+                 @Html.ActionLink("Boys Hostels","../Home/BoysHostels","BoysHostels") Seats  :: 80<br />
+               
+                   <br />
+
+                   </div>
+               <div style="font-size:19px; float:right">
+               
+                   @Html.ActionLink("Girls Hostels","../Home/GirlsHostels","GirlsHostels") Seats :: 60
+                   <br />
+
+                   </div>
+                   </div>
+               </div>
+           </div>
+       </div>

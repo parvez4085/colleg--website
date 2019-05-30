@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+    <style>
+        input:required
+{
+color:green;
+font-family:Verdana;
+font-size:18px;
+font-weight:bold;
+padding-left:10px;
+border-radius:5px;
+text-transform:uppercase;
+}
+        .xxxx {
+        font-size:19px;
+        font-weight:bold;
+        font-family:Verdana;
+        }
+    </style>
+
+     <div class="row">
+        <div class="col-sm-12">
+            <div class="vcd" style="min-height:100px;background-color:#1627f3;">
+            <div class="col-sm-6">
+          <h1 style="font-family:Algerian;padding-top:10px;color:white;text-align:center;">registration</h1> 
+        </div>
+             <div class="col-sm-6">
+         
+        </div></div>
+        </div>
+      </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="cse" style="background:#efc161;min-height:750px;"><br />
+                    <div class="col-sm-12">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10" style="min-height:300px;"><br /><div class="form-group">
+     <form action="/Home/Registration" method="post" enctype="multipart/form-data">
+         <div class="row">
+             <div class="col-sm-12">
+                 <div class="col-sm-4 xxxx">
+             Name : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-8">
+            <input type="text" class="form-control" autocomplete="off"  maxlength="50" placeholder="Enter your name" required="required" id="nam"  name="txtname"/><br /><br /></div>
+            <div class="col-sm-4 xxxx">
+                 Date of Birth : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-8">
+            <input type="text" class="form-control" autocomplete="off" maxlength="10" placeholder="dd/mm/yyyy" required="required" id="date" name="txtdob"/><br /><br /></div>
+            
+                 <div class="col-sm-4 xxxx">
+            Adhar Number : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-8">
+            <input type="text" class="form-control" autocomplete="off" maxlength="12" placeholder="Enter your adhar number" required="required" id="adhar"  name="txtadhar"/><br /><br /></div>
+            <div class="col-sm-4 xxxx">
+             Mobile Number : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-8">
+            <input type="text" class="form-control" autocomplete="off" maxlength="10" placeholder="Enter your mobile number" required="required" id="mo"  name="txtmobile"/><br /><br /></div>
+            <div class="col-sm-4 xxxx">
+            Email-ID : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-8">
+            <input type="text" class="form-control" autocomplete="off" style="text-transform:lowercase;" maxlength="50" placeholder="ENTER YOUR EMAIL-ID" required="required" id="ema"  name="txtemail"/><br /><br /></div>
+           <div class="col-sm-4 xxxx">
+            Upload Photo : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-8">
+            <input type="file" class="form-control" name="photo" required="required" /><br /><br /></div>
+            <div class="col-sm-4 xxxx">
+             Password : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-8">
+            <input type="password" style="text-transform:none;" autocomplete="off" class="form-control" maxlength="20" placeholder="ENTER YOUR PASSWORD" required="required" id="pass"  name="txtpass"/><br /><br /></div>
+           <div class="col-sm-4 xxxx">
+                  Verify Password : <sup style="color:red;">*</sup></div>
+                 <div class="col-sm-8">
+            <input type="password" style="text-transform:none;" autocomplete="off" class="form-control" maxlength="20" placeholder="CONFIRM YOUR PASSWORD" onkeyup="mypass()" required="required" id="cpass" name="txtcpasswd"/><p style="color:red;" id="wor"></p><br /><br /></div>
+                 <div class="col-sm-6 xxxx">
+              <input type="reset" value="RESET"style="background:#2488bb;" class="btn btn-success form-control" /><br /><br /></div>
+                 <div class="col-sm-6 xxxx">
+              <input type="submit" value="SUBMIT"style="background:#2488bb;" class="btn btn-success form-control"/><br /><br /></div>
+             </div>
+         </div>
+         </form></div><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "SeminarHallsMngt";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+
+<div class="row">
+  <div class="col-lg-3 Left">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="../Admin/FacilitiesResourcesMgnt">Bodys Hostel Mgnt</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="../Admin/GirlsHotels">Girls Hostel Mgnt</a>
+        <a class="list-group-item list-group-item-action" data-toggle="list" href="../Admin/CentralLibrary" >Central Library Mgnt</a>
+      <a class="list-group-item list-group-item-action"  data-toggle="list" href="#">Sport & Atheletics Mgnt</a>
+        <a class="list-group-item list-group-item-action"  data-toggle="list" href="../Admin/SeminarHallsMngt">Auditorium & Seminar Halls Mgnt</a>
+    </div>
+  </div>
+  <div class="col-lg-7 Right">
+      <div class="card" style=" font-size:22px; background-color:rgba(198, 20, 20, 0.87);color:#FFFFFF; border-radius:2px 2px 2px 2px; height:50px;">
+         <strong> Auditorium & Seminar Halls Management</strong>
+      </div>
+      <form action="../Admin/SeminarHallsMngt" method="post" enctype="multipart/form-data">
+      <div class="card1" style=" border-radius:2px 2px 2px 2px; min-height:250px;margin-top:5px; padding:20px;">
+      
+          <label> Seminar Hals Title</label>
+          <input type="text" name="txtTitle" class="form-control" />
+          <br />
+      <label>Seminar Halls Photoes:</label>
+
+          <input type="file" name="txtfile" class="form-control" />
+          
+          <br />
+         <span style="color:red; font-size:18px;">@ViewBag.result</span> <br />
+          <button type="submit" class="btn btn-success" style="width:100px">Save</button>
+        
+          
+          </div>
+          </form>
+</div>
+      </div>

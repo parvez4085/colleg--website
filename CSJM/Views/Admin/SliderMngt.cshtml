@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "SliderMngt";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+      <script>
+          $(document).ready(function () {
+              $("#imgProfie").click(function () {
+                  $("#txtfile").trigger('click');
+              })
+              function readURL(input, target) {
+                  if (input.files && input.files[0]) {
+                      var reader = new FileReader();
+                      var image_target = $(target);
+                      reader.onload = function (e) {
+                          image_target.attr('src', e.target.result).show();
+                      };
+                      reader.readAsDataURL(input.files[0]);
+                  }
+              }
+              $("#txtfile").live("change", function () {
+                  readURL(this, "#imgProfie");
+              })
+          })
+</script>
+<script>
+    function show() {
+        document.getElementById("imgProfie").innerHTML = "jdgjdghjj";
+    }
+</script>
+
+@Html.ActionLink("Delete Image", "../Admin/DeleteImage", "DeteleImage")
+<div class="container-fluid" style="background-color:#FFFFFF;">
+<div class="row">
+ <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12 col-7">
+          <p style="font-weight:bold; font-size:16px; font-family:'Times New Roman'">Dimensions= 3264 X 1552 , Width:3264 pixels Height 1552 pixels Horizontal resolution: 72 dpi
+              Vertical resolution: 72 dpi And More then width and height  Not allow. 
+          </p>
+
+    <form action="../Admin/SliderMngt" method="post" enctype="multipart/form-data">
+      
+        <div id="imgDiv" style="height:500px; background-color:white; border:1px solid;">
+                 
+                 <img src="#" id="imgProfie"  height="100%" width="100%" onmousemove="show()"/> 
+                    <input type="file" name="txtfile" id="txtfile" style="display:none" />
+                </div><br />
+        <input type="submit" value="Save" class="btn btn-success" />
+    </form>
+    <label>@ViewBag.result</label>
+</div>
+  </div>
+    </div>
+     </div>

@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "DeleteImage";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using CSJM.Models;
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 card">
+        @Html.ActionLink("Add Image", "../Admin/SliderMngt", "SliderMngt")
+            
+            <table class="table">
+                <tr>
+                    <th>Image Id</th>
+                    <th>Image Path</th>
+                    <th>Insert date</th>
+                    <th>Delete</th>
+                    </tr>
+                @{
+                    ConnectionManager cm = new ConnectionManager();
+                    string cmd = "select *from TBL_SliderImage";
+                    System.Data.DataTable dt = cm.GetBulkRecord(cmd);
+                    if (dt.Rows.Count > 0)
+                    {
+                        int j=1;
+                        
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                           
+                            <tr>
+                                <td>@j</td>
+                                <td>@dt.Rows[i]["ImagePath"].ToString()</td>
+                                <td>@dt.Rows[i]["dt"].ToString();</td>
+                               <td><a href="/Admin/Delete?dt=@dt.Rows[i]["Sn"].ToString() " onclick="return confirm('Are you sure')">Click</a></td>
+                           </tr>
+                            j++;
+                    }
+                }
+                }
+                
+            </table>
+        <h5>@ViewBag.result</h5>
+        <div class="col-sm-2"></div>
+    </div>
+    </div>

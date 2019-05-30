@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "AboutIns";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+@model CSJM.Models.AboutUsMassage
+<div class="row">
+  <div class="col-lg-3" style="margin-top:30px;">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="../Home/AboutIns" role="tab" aria-controls="home">About Institute</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="../Home/MissionVission" role="tab" aria-controls="profile">Mission & Vission</a>
+      <a class="list-group-item list-group-item-action"  data-toggle="list" href="../Home/PrincipaleMessage" role="tab" aria-controls="messages">Principal&rsquo;s Message </a>
+      <a class="list-group-item list-group-item-action"  data-toggle="list" href="#" role="tab" aria-controls="settings">Rules and Regulations </a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab" aria-controls="settings">Institute Brochure </a>
+       <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab" aria-controls="settings">Infrastructure </a>
+    </div>
+  </div>
+  <div class="col-lg-8 Right card1" style="border:1px solid #d8dede;margin-top:30px;">
+      <div style=" font-size:18px;color:#d8dede; border-radius:2px 2px 2px 2px; min-height:200px;">
+        <h3 style="text-align:center"> <strong> About Institute </strong></h3>
+
+          <p style="color:rgba(22, 20, 20, 0.66);text-align:justify;padding:0 30px 0 30px;">@Model.dbAboutIns</p>
+          </div>
+      </div>
+    </div>

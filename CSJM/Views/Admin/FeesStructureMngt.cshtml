@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "FeesStructureMngt";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+
+<div class="row">
+  <div class="col-lg-3 Left">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="../Admin/AcademicsMgnt">Academic Program Mgnt</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="../Admin/SyllabusMgnt">Syllabus Mgnt</a>
+        <a class="list-group-item list-group-item-action" data-toggle="list" href="../Admin/AdmissionMngt" >Admission Mgnt</a>
+      <a class="list-group-item list-group-item-action"  data-toggle="list" href="../Admin/FeesStructureMngt">Fees Mgnt</a>
+        
+    </div>
+  </div>
+  <div class="col-lg-8 Right">
+      <div class="card" style=" font-size:22px; background-color:rgba(198, 20, 20, 0.87);color:#FFFFFF; border-radius:2px 2px 2px 2px; height:50px;">
+         <strong><span class="fa fa-bed"></span> Fees Structure Management</strong>
+      </div>
+      <form action="../Admin/AcademicsMgnt" method="post" enctype="multipart/form-data">
+      <div class="card1" style=" border-radius:2px 2px 2px 2px; min-height:250px;margin-top:5px; padding:20px;">
+      
+          <label>Branch Group Name</label>
+          <select name="txtGroupName" class="fomr-control"><option>
+              <------ Select Opction  ------->
+
+                  </option>
+              <option>A</option>
+              <option>K</option>
+              <option>C</option>
+              <option>H</option>
+              <option>I</option>
+              <option>B</option>
+              <option>E</option>
+          </select>
+          <br />
+      <label>Course Name</label>
+
+          <input type="text" name="txtCourse" class="form-control" placeholder="Example: Three Years Diploma in Branch Name" />
+          
+          <br />
+          <label>Intake of students</label>
+          <input type="text" name="txtInteke" class="form-control" placeholder="Intake - 60" />
+
+         <span style="color:red; font-size:18px;">@ViewBag.result</span> <br />
+          <button type="submit" class="btn btn-success" style="width:100px">Save</button>
+          
+          
+          </div>
+          </form>
+</div>
+      </div>

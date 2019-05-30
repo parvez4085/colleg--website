@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/hover-min.css" rel="stylesheet" />
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <link href="~/Content/Main.Css" rel="stylesheet" />
+  
+
+
+    <script>$("document").ready(function ($) {
+    var nav = $('#main-menu-container');
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            nav.addClass("f-nav");
+        } else {
+            nav.removeClass("f-nav");
+        }
+    });
+});
+
+        var timeOutValue = 100;      // SET TIMEOUT (IN MILISECONDS).
+        var setTimeToHide_ID, mItem;
+
+        function showmenu(obj) {
+            if (mItem) mItem.style.display = 'none';
+
+            mItem = document.getElementById(obj);
+            mItem.style.display = 'block';
+            mItem.style.color = 'red';
+        }
+        // SET TIME TO HIDE MENU LIST.
+        function setTimeToHide() {
+            setTimeToHide_ID = window.setTimeout(HideMenu, timeOutValue);
+        }
+
+        function HideMenu() {
+            if (mItem) mItem.style.display = 'none';
+        }       // HIDE THE MENU LIST AFTER A SPECIFIED TIME.
+
+        function ReSetTimer() {
+            if (setTimeToHide_ID) {
+                window.clearTimeout(setTimeToHide_ID);
+                setTimeToHide_ID = 0;
+            }
+        };
+
+    </script>
+    <style>
+        .n-nav{  /* To fix main menu container */
+    z-index: 9999;
+    position: fixed;
+    left: 99px;
+    top: 0;
+    width: 1140px;
+    background:#4CAF50;
+    border:1px solid;
+    border-radius:5px 5px 5px 5px;
+}
+            .f-nav ul {
+                font-size:16px;color:whitesmoke;
+            }
+#main-menu-container {
+    text-align: center; /* Assuming your main layout is centered */
+}
+        ul li a {
+            color:red;
+           text-transform:capitalize;
+ 
+        }
+
+
+
+        </style>
+</head>
+<body>
+    <div class="container-fluid" style="width:auto">
+        
+       <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 col-12">
+                <div class="col-sm-12" style="min-height: 100px; max-height:400px; color: white; background: #424a53;">
+                    <div class="row">
+                    <div class="col-lg-1 col-xs-3" style="padding:0"><img src="~/Content/Imagess/ima1.png" style="height:100px;width:100px;" /></div>
+                    <div class="col-sm-10 col-xs-6" style="text-align:center; padding-top:10px;">
+                    <div style="font-family:Verdana; font-size:22px;">
+                    Government Polytechnic Aurai,Bhadohi, Uttar Pradesh</div>
+                    <div style="font-family:'Kruti Dev 010';font-size:20px;font-weight:bold;">
+                    jktdh; ikWyhVsfDud vkSjkbZ] Hknksgh] mRrj izns”k 
+                    </div>
+                </div>
+                    <div class="col-lg-1 col-xs-3" style="float:right;padding:0"><img src="~/Content/Imagess/ima2.png" style="max-height:100px;" /></div>
+                  
+                </div>
+                    </div>
+        </div>
+        </div>
+
+
+        <!------------------- Menu Bar code Strat here----------------------->
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                    <nav class="navbar navbar-inverse" style="background:rgba(56, 242, 61, 0.87);">
+                        <div id="main-menu-container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <a class="navbar-brand" href="../Home/Index" style="color:#FFFFFF;"><i class="fa fa-institution"></i> </a>
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav" style="color:whitesmoke;">
+                                    <li><a href="/Home/Index"> home<span class="sr-only">(current)</span></a></li>
+                                        <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat');" onmouseout="setTimeToHide()">About Us<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/AboutIns">About Institute</a></li>
+                                              <li><a href="../Home/MissionVission">Mission & Vision</a></li>
+			                                  <li><a href="../Home/PrincipaleMessage">Principal's Message</a></li>
+			                                  <li><a href="#">Rules and Regulations</a></li>
+			                                  <li><a href="#">Infrastructure</a></li>
+                                          </ul>
+                                   </li>
+                                     <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat1');" onmouseout="setTimeToHide()">Governance<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat1" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/Principal">Principal</a></li>
+                                              <li><a href="../Home/AcademicCommittee">Academic Committee</a></li>
+			                                  <li><a href="../Home/FinanceCommittee">Finance Committee</a></li>
+			                                  <li><a href="../Home/AciteCommittee">AICTE Committee</a></li>
+			                                  <li><a href="../Home/ScholarshipCommittee">Scholarship Committee</a></li>
+                                              <li><a href="#">Sports Committee</a></li>
+                                              <li><a href="games.php">Proctorial Committee</a></li>
+                                              <li><a href="games.php">Securites & Gardening Committee</a></li>
+                                              <li><a href="games.php">Training & Placement Committee</a></li>
+                                          </ul>
+                                   </li>
+                                     <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat2');" onmouseout="setTimeToHide()">Academics<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat2" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/AcademicProgram">Academic Programmes</a></li>
+                                              <li><a href="../Home/Syllabus">Syllabus</a></li>
+			                                  <li><a href="../Home/Admission">Admissions</a></li>
+			                                  <li><a href="../Home/FeesStructure">Fees Structure</a></li>
+			                                  
+                                          </ul>
+                                   </li>
+                                     <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat3');" onmouseout="setTimeToHide()">Departments<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat3" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/Computer">Computer Science & Engineering</a></li>
+                                              <li><a href="../Home/Information">Information of Technology</a></li>
+			                                  <li><a href="../Home/Electronics">Electronics Enginnering</a></li>
+                                              <li><a href="../Home/Applied">Applied Science</a></li>
+			                                  </ul>
+                                   </li>
+                                     <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat4');" onmouseout="setTimeToHide()">Training & Placement<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat4" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="convocation.php">Training Statistics</a></li>
+                                              <li><a href="teacher.php">Placement Statistics</a></li>
+			                                  <li><a href="annual.php">Placed Students Details</a></li>
+                                              <li><a href="annual.php">Recruiting Partners</a></li>
+			                                  </ul>
+                                   </li>
+                                    <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat5');" onmouseout="setTimeToHide()">facilities & resources<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat5" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/Facilities">Hostels</a></li>
+                                              <li><a href="../Home/CentralLibrary">Central Library</a></li>
+			                                  <li><a href="annual.php">Sport & Atheletics</a></li>
+                                              <li><a href="../Home/AuditoriumAndSeminarHalls">Auditorium & Seminar Halls</a></li>
+			                                  </ul>
+                                   </li>
+                                    <li><a href="#">Alumni</a></li>
+                                    <li class="dropdown">
+                                         <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="showmenu('divLiCat6');" onmouseout="setTimeToHide()">contact us<span class="caret"></span></a>
+                                          <ul class="dropdown-menu" id="divLiCat6" onmouseover="ReSetTimer()" onmouseout="setTimeToHide()" style="display:none;">
+                                              <li><a href="../Home/Adminlogin">Address</a></li>
+                                              <li><a href="teacher.php">Maps & Location</a></li>
+			                                  <li><a href="annual.php">Phone Directory</a></li>
+                                              <li><a href="annual.php">Feedback/Query</a></li>
+			                                  </ul>
+                                   </li>
+                                    </ul>
+                       
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </div>
+                </div>
+
+       <!------------------- Menu Bar code End here----------------------->
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 col-12">
+        @RenderBody()
+            </div>
+
+       <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 col-12">
+                <div class="col-sm-12" style="min-height: 220px; max-height:400px; color: white; background: #424a53;"><br />
+                    <div class="col-sm-4">
+                         Goverment Polytechnic Sant Ravidash Nagar (Bhadohi),<br />Uttar Pradesh, India.
+                    </div>
+                    <div class="col-sm-4" style="padding-left:14px;">
+                        <a href="http://www.facebook.com" target="_blank" style="text-decoration:none;font-size:22px;color:white"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" style="text-decoration:none;font-size:22px;padding:5px;color:white"><i class="fa fa-twitter"></i></a>
+                        <a href="http://plus.google.com" target="_blank" style="text-decoration:none;font-size:22px;color:white"><i class="fa fa-google-plus"></i></a>
+                        <a href="http://www.instagram.com" target="_blank" style="text-decoration:none;font-size:22px;padding:5px;color:white"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    <div class="col-sm-4">
+                        <a href="http://www.google.com" target="_blank" style="color:white;">
+                            Mobile apps - seaching on the go<br />
+                            other college - for complete knowledge
+                        </a>
+                    </div><br /><br /><br />
+                    <hr />
+                <div class="po" style="min-height:90px;text-align:center;">
+                    <h5> GOVERNMENT POLYTECHNIC AURAI, SANT RAVIDAS NAGAR (BHADOHI), UTTAR PRADESH</h5>
+                         Copyright &copy; 2019-2020 GPAurai | All rights reserved.
+                </div>
+                </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

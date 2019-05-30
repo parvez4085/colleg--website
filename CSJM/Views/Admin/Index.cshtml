@@ -1,0 +1,144 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>Index</title>
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/hover-min.css" rel="stylesheet" />
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <link href="~/Content/Main.Css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container-fluid  Head-admin">
+<div class="row">
+
+  <div class="col-lg-4 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="Head-admin" > <h3>School Management System</h3> </div>
+  </div>
+     <div class="col-lg-4 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="Head-admin"> <h3>User: Administrator</h3> Hello! @Session["aid"].ToString()</div>
+  </div>
+
+    <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 col-6">
+                   
+                  <span class="fa fa-Admin" style="padding:30px;margin-right:20px; font-size:20px;"> @Html.ActionLink("Home","../Admin/Index","Index")</span>
+                 <span class="fa fa-User" style="padding:30px;margin-right:20px; font-size:20px;">@Html.ActionLink("Logout","../Admin/Logout","Logout")</span>
+                 </div>
+
+   
+
+    </div>
+        </div>
+     <div class="container-fluid" >
+       
+             <div class="row">
+             <div class="col-sm-12" style="height:10px; background-color:#487c42; border:1px solid"></div>
+                 </div>
+             <div class="row">
+                 <div class="col-sm-12" style="height:30px; background-color:#f2f1f1;">
+                     Home
+                 </div>
+             </div>
+             
+
+
+
+ <div class="container-fluid" style="background-color:#FFFFFF; margin-top:50px" >
+<div class="row">
+
+  <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"><a href="../Admin/AboutUsMgnt"><i class="fa fa-user" style="font-size:24px;"></i><br>About Us <br>Management</a></div>
+  </div>
+ 
+
+  <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card">
+    <a href="#" class="#"><i class="fa fa-gavel" style="font-size:24px;"></i> <br>Aicte <br>Management </a>
+    </div>
+  </div>
+ 
+ <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"> <a href="../Admin/AcademicsMgnt" class="#"><i class="fa fa-external-link" style="font-size:24px;"></i><br>Academics<br>Management</a></div>
+  </div>
+  
+  
+   <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"><a href="../Admin/DepartmentsMgnt"><i class="fa fa-users" style="font-size:24px;"></i><br>Deppartment <br>Management</a></div>
+   </div>
+ 
+
+ 
+  <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"> <a href="#" class="#"><i class="fa fa-tachometer" style="font-size:24px;"></i><br>Traning & Placement <br>Management</a></div>
+  </div>
+    <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"> <a href="../Admin/FacilitiesResourcesMgnt" class="#"><i class="fa fa-bed" style="font-size:24px;"></i><br>Facilities & Resources <br>Management</a></div>
+  </div>
+    </div>
+     </div>
+ 
+
+    <div class="container-fluid" style="background-color:#FFFFFF; margin-top:50px" >
+      <div class="row">
+ 
+    
+
+   
+
+    <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"> <a href="#" class="#"><i class="fa fa-mortar-board" style="font-size:24px;"></i><br>Alumni <br>Management</a></div>
+  </div>
+ 
+    <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"> <a href="#" class="#"><i class="fa fa-phone" style="font-size:24px;"></i><br>Contact Us <br>Management</a></div>
+  </div>
+ 
+
+    <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"> <a href="../Admin/SliderMngt" class="#"><i class="fa fa-image" style="font-size:24px;"></i><br>Slider <br>Management</a></div>
+  </div>
+
+      <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+    <div class="card"> <a href="../Admin/OurCoureseMngt" class="#"><i class="fa fa-book" style="font-size:24px;"></i><br>Our Courese <br>Management</a></div>
+  </div>
+
+           <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+             <div class="card"> <a href="../Admin/NoticBoardNewsMngt" class="#"><i class="fa fa-bullhorn" style="font-size:24px;"></i><br>Notic Board & News <br>Management</a></div>
+           </div>
+
+           <div class="col-lg-2 col-md-3  col-sm-4 col-xs-4 col-6">
+        <div class="card"> <a href="../Admin/GellaryMgnt" class="#"><i class="fa fa-file-photo-o" style="font-size:24px;"></i><br>Our Gellary <br>Management</a></div>
+     </div>
+
+</div>
+</div>
+
+          <!-- ################################################################################################ -->
+ <!--   <div>
+   
+       <marquee align="baseline" onmouseover="this.stop();" onmouseout="this.start();">
+  <strong>
+<p><img src="images/new_red.gif">
+<a href="attachment/NEWS & EVENTS/calender.pdf"target="_blank">Dear students please follow this academic calendar.<br></a>
+ </p>  </strong>
+   </marquee>
+ 
+    
+    </div>
+    <!-- ################################################################################################ -->
+</div> 
+
+
+</body>
+
+</html>

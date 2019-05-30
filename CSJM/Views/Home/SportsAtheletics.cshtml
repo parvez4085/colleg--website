@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "SportsAtheletics";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 Left">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" href="../Home/Facilities">Hostels</a>
+      <a class="list-group-item list-group-item-action" href="../Home/CentralLibrary">Central Library</a>
+        <a class="list-group-item list-group-item-action" href="../Home/SportsAtheletics">Sports & Atheletics </a>
+      <a class="list-group-item list-group-item-action" href="../Home/AuditoriumAndSeminarHalls">Auditorium & Seminar Halls </a>
+      
+    
+    </div>
+  </div>
+
+   <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+       <div class="row">
+           <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" style="border:1px solid #d8dede;margin-bottom:20px; padding:0px">
+        <div class="card" style="background-color:#af0202;color:#FFFFFF;">
+           <center> <i class="fa fa-book" style="font-size:36px; color:#ffffff;"></i><font style="font-size:30px;">  <strong>Central Library</strong></font></center>
+           </div>
+               <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" style="margin-top:10px">
+               
+                   </div>
+
+                   @using System.Data
+                   @using System.Data.Sql
+                   @using CSJM.Models
+                   @{
+                       ConnectionManager cm = new ConnectionManager();
+                       string cmd = "select *from TBL_SportGame";
+                       System.Data.DataTable dt=cm.GetBulkRecord(cmd);
+                       if(dt.Rows.Count>0)
+                       {
+                           var Name = dt.Rows[0]["Text"].ToString();
+                           for(int i=0;i<dt.Rows.Count;i++)
+                           {
+
+                               var Img = "../Content/Gallery/" + dt.Rows[i]["Img"].ToString();
+                               string date=dt.Rows[i]["dt"].ToString();
+                           
+                                <div class="col-lg-4 card1"id="pic_show" style="min-height:200px;padding:10px; margin:0 0 10px 0;">
+                                   <a href="@Img" target="_blank"><img class="img-fluid"  src="@Img" height="100%" width="100px%" /></a>
+                                    <label>@date</label>
+                  
+                             
+		                </div>
+                        
+                   }
+                   }
+                           
+                       }         
+           </div>
+             
+       </div>
+       </div>

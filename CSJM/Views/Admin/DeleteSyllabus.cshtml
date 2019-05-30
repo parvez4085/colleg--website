@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "DeleteSyllabus";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+
+@using System.Data;
+@using System.Data.SqlClient;
+@using CSJM.Models;
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 card">
+        @Html.ActionLink("Add Syllabus", "../Admin/SyllabusMgnt", "SyllabusMgnt")
+            
+            <table class="table">
+                <tr>
+                    <th>S.N.</th>
+                    <th>Branch Name</th>
+                    <th>Year</th>
+                    <th>File Path</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                    </tr>
+                @{
+                    ConnectionManager cm = new ConnectionManager();
+                    string cmd = "select *from TBL_Syllabus";
+                    System.Data.DataTable dt = cm.GetBulkRecord(cmd);
+                    if (dt.Rows.Count > 0)
+                    {
+                        int j=1;
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                          
+                            <tr>
+                                <td>@j</td>
+                                <td>@dt.Rows[i]["BranchName"].ToString()</td>
+                                <td>@dt.Rows[i]["Year"].ToString()</td>
+                                <td>@dt.Rows[i]["Files"].ToString()</td>
+                                <td>@dt.Rows[i]["dt"].ToString();</td>
+                               <td><a href="/Admin/Delete?dt1=@dt.Rows[i]["Sn"].ToString() " onclick="return confirm('Are you sure')"><i class="fa fa-trash"></i></a></td>
+                           </tr>
+                            j++;
+                    }
+                }
+                }
+                
+            </table>
+        <h5>@ViewBag.result</h5>
+        <div class="col-sm-2"></div>
+    </div>
+    </div>

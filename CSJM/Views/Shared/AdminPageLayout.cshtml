@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/hover-min.css" rel="stylesheet" />
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <link href="~/Content/Main.Css" rel="stylesheet" />
+
+    <style>
+    .Left {
+        min-height:400px;
+        font-size:18px;
+        
+        margin-left:10px;
+        margin-right:10px;
+
+    }
+    .Right {
+        min-height:200px;
+        font-size:18px;
+       
+        
+    }
+  
+</style>
+</head>
+<body>
+       <div class="container-fluid">
+         
+
+            <div class="col-lg-4 col-md-3  col-sm-4 col-xs-4 col-6">
+                <div class="Head-admin" > <h3> Collage Management System</h3> </div>
+            </div>
+              <div class="col-lg-4 col-md-3  col-sm-4 col-xs-4 col-6">
+               <div class="Head-admin"> <h3>User: Administrator</h3> Hello</div>
+             </div>
+
+             <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 col-6">
+                   
+                  <span class="fa fa-Admin" style="padding:30px;margin-right:20px; font-size:20px;"> @Html.ActionLink("Home","../Admin/Index","Index")</span>
+                 <span class="fa fa-User" style="padding:30px;margin-right:20px; font-size:20px;">@Html.ActionLink("Logout","../Admin/Logout","Logout")</span>
+                 </div>
+       
+             <div class="row">
+             <div class="col-sm-12" style="height:10px; background-color:#487c42; border:1px solid"></div>
+                 </div>
+             <div class="row">
+                 <div class="col-sm-12" style="height:30px; background-color:#f2f1f1;">
+                     Home
+                 </div>
+             </div>
+    <div class="col-12" style="margin:20px;">
+        @RenderBody()
+    </div>
+    </div>
+</body>
+</html>

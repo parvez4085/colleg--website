@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/hover-min.css" rel="stylesheet" />
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <style>
+        
+        ul li:hover {
+            -webkit-box-shadow: 10px 10px 8px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 8px 1px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 8px 1px rgba(0,0,0,0.75);
+        border-radius:8px;
+        background:#3e8e41;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" style="min-height:100px;">
+                <div class="col-sm-1" style="background:#8D021F;padding-left:1px"><img src="~/Content/Imagess/ima1.png" style="max-height:100px;max-width:100px;" /></div>
+                <div class="col-sm-10" style="background:#8D021F;min-height:100px;text-align:center;padding-top:13px;">
+                    <div class="b" style="font-family:Verdana;color:whitesmoke;font-size:24px;">
+                    Chhatrapati Shahu Ji Maharaj Government Polytechnic Ambedkar Nagar</div>
+                    <div class="a" style="font-family:'Kruti Dev 010';color:whitesmoke;font-size:32px;font-weight:bold;">
+                    N=ifr 'kkgw th egkjkt jktdh; ikWfyVsfDud vEcsMdj uxj 
+                    </div>
+                </div>
+                <div class="col-sm-1" style="text-align: right; background: #8D021F;"><img src="~/Content/Imagess/ima2.png" style="max-height:100px;" /></div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-12">
+                    <nav class="navbar navbar-inverse" style="background:#4CAF50;">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <a class="navbar-brand" style="color:white">Hello! &nbsp;Admin</a>
+                                <ul class="nav navbar-nav" style="font-size:17px;color:whitesmoke;">
+                                    <li><a href="/Admin/Index" class="fa fa-home" style="font-weight:bold;color:whitesmoke;"> HOME<span class="sr-only">(current)</span></a></li>
+                                    <li><a href="/Admin/Viewdata" style="font-weight:bold;color:whitesmoke;">VIEW DATABASE</a></li>
+                                    <li><a href="/Admin/Delete" style="font-weight:bold;color:whitesmoke;">DELETE DATABASE</a></li>
+                                    <li><a href="/Admin/Change" style="font-weight:bold;color:whitesmoke;">CHANGE PASSWORD</a></li>
+                                    </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="/Admin/Logout" class="fa fa-sign-out" style="font-weight:bold;color:whitesmoke;font-size:17px;">LOG OUT</a></li>
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </div>
+                </div>
+        @RenderBody()
+         <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-12" style="min-height: 220px; color: white; background: #424a53;"><br />
+                    <div class="col-sm-4">
+                        Chhatrapati Shahu Ji Maharaj Govt.<br />
+                        Polytechnic Ambedkar Nagar,<br />Uttar Pradesh, India.
+                    </div>
+                    <div class="col-sm-4" style="padding-left:14px;">
+                        <a href="http://www.facebook.com" target="_blank" style="text-decoration:none;font-size:22px;color:white"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" style="text-decoration:none;font-size:22px;padding:5px;color:white"><i class="fa fa-twitter"></i></a>
+                        <a href="http://plus.google.com" target="_blank" style="text-decoration:none;font-size:22px;color:white"><i class="fa fa-google-plus"></i></a>
+                        <a href="http://www.instagram.com" target="_blank" style="text-decoration:none;font-size:22px;padding:5px;color:white"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    <div class="col-sm-4">
+                        <a href="http://www.google.com" target="_blank" style="color:white;">
+                            Mobile apps - seaching on the go<br />
+                            other college - for complete knowledge
+                        </a>
+                    </div><br /><br /><br />
+                    <hr />
+                <div class="po" style="min-height:90px;text-align:center;background:#424a53;color:white;padding-top:1px;">
+                    <h3>Chhatrapati Shahu Ji Maharaj Govt. Poly. Ambedkar Nagar, Uttar Pradesh</h3>
+       Copyright &copy; 2016 C.S.J.M. | All rights reserved.
+                </div><br />
+                </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

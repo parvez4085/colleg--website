@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "SyllabusMgnt";
+    Layout = "~/Views/Shared/AdminPageLayout.cshtml";
+}
+<div class="col-lg-3 Left">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="../Admin/AcademicsMgnt">Academic Program Mgnt</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="../Admin/SyllabusMgnt">Syllabus Mgnt</a>
+        <a class="list-group-item list-group-item-action" data-toggle="list" href="../Admin/AdmissionMngt" >Admission Mgnt</a>
+      <a class="list-group-item list-group-item-action"  data-toggle="list" href="../Admin/FeesStructureMngt">Fees Mgnt</a>
+        
+    </div>
+  </div>
+ <div class="col-lg-8 Right">
+      <div class="card" style=" font-size:22px; background-color:rgba(198, 20, 20, 0.87);color:#FFFFFF; border-radius:2px 2px 2px 2px; height:50px;">
+         <strong><span class="fa fa-book"></span> Syllabus Management</strong>
+      </div>
+      <form action="../Admin/SyllabusMgnt" method="post" enctype="multipart/form-data">
+      <div class="card1" style=" border-radius:2px 2px 2px 2px; min-height:250px;margin-top:5px; padding:20px;">
+      
+          <label>Branch Name:</label>
+          <input type="text" class="form-control" name="BranchName" placeholder="Example: Electronic Engineering " />
+          <br />
+      <label>Year:</label>
+          <select name="Years" class="form-control">
+              <option><----- Select Opction  -----></option>
+              <option>2017-18</option>
+              <option>2018-19</option>
+              <option>2019-20</option>
+              <option>2020-21</option>
+              <option>2021-22</option>
+              <option>2022-23</option>
+              <option>2023-24</option>
+              <option>2024-25</option>
+          </select>
+          
+          
+          <br />
+          <label>Files:</label>
+          <input type="file" name="txtfile" class="form-control"/>
+
+         <span style="color:red; font-size:18px;">@ViewBag.result</span> <br />
+          <button type="submit" class="btn btn-success" style="width:100px">Save</button>
+
+          &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.ActionLink("Delete Syllabus", "../Admin/DeleteSyllabus", "DeleteSyllabus")
+          
+          
+          </div>
+          </form>
+</div>
